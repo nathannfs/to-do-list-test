@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import styles from './styles.module.scss'
 
@@ -13,23 +13,26 @@ interface TypeModal {
 }
 
 export function Tasks() {
-  const [tasks, setTasks] = useState<ITask[]>([
-    {
-      id: new Date().getTime(),
-      text: 'Fazer exercício',
-      isChecked: false,
-    },
-    {
-      id: new Date().getTime() + 1,
-      text: 'Fazer outro exercício',
-      isChecked: false,
-    },
-  ])
+  const [tasks, setTasks] = useState<ITask[]>(() => {
+    if (typeof window !== 'undefined') {
+      return JSON.parse(localStorage.getItem('tasks') || '[]')
+    }
+
+    return []
+  })
   const [inputValue, setInputValue] = useState('')
   const [modalOpen, setModalOpen] = useState<TypeModal | null>(null)
 
   const tasksPending = tasks.filter(task => !task.isChecked)
   const tasksFinished = tasks.filter(task => task.isChecked)
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(tasks)
+
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('tasks', stateJSON)
+    }
+  }, [tasks])
 
   function handleAddTask() {
     if (!inputValue) {
@@ -107,6 +110,7 @@ export function Tasks() {
           )}
         </div>
       </div>
+
       <button
         type="button"
         onClick={() => setModalOpen({ type: 'add' })}

@@ -93,3 +93,14 @@
 	cursor: pointer;
 }
 
+@media (max-width: 900px) {
+	.container {
+		width: 100%;
+		padding: 16px 8px
+	}
+
+	.paragraph {
+		word-break: break-all;
+		width: 112px;
+	}
+}

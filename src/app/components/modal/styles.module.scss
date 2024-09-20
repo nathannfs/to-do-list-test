@@ -12,6 +12,7 @@
   top: 0;
   overflow: hidden;
 
+  backdrop-filter: blur(2px);
   background: #FFFFFFCC;
 }
 
@@ -86,4 +87,15 @@
 .deleteButton {
   background: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
   color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+    height: 100%;
+
+    .buttons {
+      flex-direction: column-reverse;
+    }
+  }
 }
