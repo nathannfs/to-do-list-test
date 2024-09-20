@@ -1,0 +1,95 @@
+.container {
+  width: 386px;
+  height: 56px;
+
+	display: flex;
+	flex: 1;
+	gap: 0.75rem;
+
+	align-items: center;
+	justify-content: space-between;
+
+  width: 100%;
+  padding: 8px 0;
+  border: 1px dashed #D7DDE9;
+  border-radius: 8px;
+  padding: 16px;
+
+  transition: background 0.2s;
+
+  &:hover {
+    background: #f7f9fd;
+  }
+}
+
+.container div {
+	display: flex;
+}
+
+.container label {
+	display: flex;
+	padding: 3px;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.container label input[type='checkbox'] {
+	display: none;
+}
+
+.checkbox {
+	border-radius: 4px;
+	height: 24px;
+	width: 24px;
+
+	background-color: transparent;
+
+	transition: 0.2s all;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
+}
+
+.checkbox-checked {
+	background: #A0DCF6;
+	border: 2px solid #0796D3;
+}
+
+.checkbox-checked:hover {
+	cursor: pointer;
+}
+
+.paragraph {
+	line-height: 140%;
+	user-select: none;
+
+	transition: 0.2s all;
+}
+
+.paragraph-checked {
+	opacity: 54%;
+	text-decoration: line-through;
+}
+
+.container button {
+	border: none;
+	background-color: transparent;
+	border-radius: 4px;
+
+	padding: 5px 4px 2px 4px;
+
+	transition: 0.2s background-color;
+}
+
+.container button line,
+.container button path {
+	transition: 0.2s fill;
+}
+
+.container button:hover {
+	cursor: pointer;
+}
+

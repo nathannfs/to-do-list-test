@@ -1,0 +1,32 @@
+.header {
+  width: 1328px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  padding: 0 0 24px 0;
+  margin: 24px 56px 0;
+
+  border-bottom: 1px solid #d7dde9;
+
+  img {
+    width: 150px;
+    height: 36px;
+
+    object-fit: contain;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 500;
+
+    margin-left: 56px;
+  }
+
+  span {
+    opacity: 54%;
+  }
+}
